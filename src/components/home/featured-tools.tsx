@@ -14,7 +14,7 @@ export function FeaturedTools() {
           <SectionHeading
             kicker="Editor’s picks"
             title="Start with these"
-            description="Six tools we would install before the first week of classes. Each one solves a problem students actually have, not a problem a marketing team invented."
+            description="The right tools save time, sharpen your study habits, and make teamwork a lot less stressful."
             action={
               <ButtonLink href="/tools" variant="outline">
                 See the full toolkit

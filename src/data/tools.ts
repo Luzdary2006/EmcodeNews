@@ -213,7 +213,7 @@ export const tools: Tool[] = [
     section: "communication-collaboration",
     tagline: "A shared space for your class, club, or study group.",
     description:
-      "Discord organises conversations into channels, so a study group can keep announcements, resources, and off-topic chat separate. Voice channels and screen sharing make it useful for both quick questions and longer sessions.",
+      "A real-time chat app with text, voice, and video channels. Teams can use it to hold quick check-in meetings, discuss ideas instantly, and organize conversations by topic.",
     mainFunction:
       "Organized text, voice, and video communication for groups.",
     benefits: [
@@ -332,7 +332,7 @@ export const tools: Tool[] = [
     section: "communication-collaboration",
     tagline: "Version control and collaboration for code projects.",
     description:
-      "GitHub hosts Git repositories and adds the collaboration layer: issues, pull requests, reviews, and actions. It is where most teams track changes to code and discuss what should merge next.",
+      "A platform built for saving, tracking, and sharing code. In group projects, it helps team members work on the same software without overwriting each other's work or losing previous versions.",
     mainFunction:
       "Cloud hosting and collaboration tools for Git repositories.",
     benefits: [
@@ -372,7 +372,7 @@ export const tools: Tool[] = [
     section: "communication-collaboration",
     tagline: "Design, prototype, and critique together in the browser.",
     description:
-      "Figma keeps design files in the browser and lets several people edit or comment at the same time. It covers interface design, prototyping, diagrams, and whiteboard sessions in one shared space.",
+      "A collaborative online design tool where everyone can design together live. It’s ideal for creating visual wireframes, prototypes, and user interfaces while getting instant feedback from teammates.",
     mainFunction:
       "Collaborative interface design and prototyping in the browser.",
     benefits: [
@@ -412,7 +412,7 @@ export const tools: Tool[] = [
     section: "communication-collaboration",
     tagline: "Shared files and documents your whole team can edit.",
     description:
-      "Google Drive stores files and powers Docs, Sheets, and Slides. Sharing permissions and real-time editing make it the default place for group reports, shared reading, and presentation decks.",
+      "A cloud storage service for creating and sharing documents, spreadsheets, and presentations. It lets the whole team write, edit, and organize project files together in one place.",
     mainFunction:
       "Cloud storage and real-time document collaboration.",
     benefits: [

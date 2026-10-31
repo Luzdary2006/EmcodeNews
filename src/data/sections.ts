@@ -19,9 +19,9 @@ export const sections: Section[] = [
     shortName: "Collaboration",
     href: "/communication-collaboration",
     kicker: "Talk, meet, build",
-    tagline: "Talk, meet, and build projects without the chaos.",
+    tagline: "Communicate clearly and collaborate with confidence.",
     description:
-      "Group work fails when the conversation lives in five different places. These tools give a team a shared room, a shared file, and a shared plan.",
+      "Great group projects depend on more than just good ideas—they rely on effective communication. Clear updates and revisions prevent misunderstandings and keep the workflow moving smoothly.",
   },
   {
     id: "tips-recommendations",
