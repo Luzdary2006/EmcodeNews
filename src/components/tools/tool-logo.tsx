@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { cn } from "@/lib/cn";
+import { withBase } from "@/lib/with-base";
 import type { Tool } from "@/types/content";
 
 interface ToolLogoProps {
@@ -21,7 +22,7 @@ export function ToolLogo({ tool, size = 48, className }: ToolLogoProps) {
       style={{ width: size, height: size }}
     >
       <Image
-        src={tool.logo}
+        src={withBase(tool.logo)}
         alt=""
         width={inner}
         height={inner}
