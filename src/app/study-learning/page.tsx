@@ -10,6 +10,8 @@ import { getSection } from "@/data/sections";
 import { tips } from "@/data/tips";
 import { getToolBySlug, getToolsBySection } from "@/data/tools";
 
+export const dynamic = "force-static";
+
 export const metadata: Metadata = {
   title: "Study & Learning",
   description:

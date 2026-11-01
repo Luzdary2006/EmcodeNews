@@ -6,6 +6,8 @@ import { Manifesto } from "@/components/home/manifesto";
 import { SectionDirectory } from "@/components/home/section-directory";
 import { site } from "@/data/site";
 
+export const dynamic = "force-static";
+
 export const metadata: Metadata = {
   title: `${site.name} — The digital toolkit for university life`,
   description: site.description,
