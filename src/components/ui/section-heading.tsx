@@ -23,7 +23,7 @@ export function SectionHeading({
       )}
     >
       <div className="max-w-2xl">
-        <p className="text-[0.7rem] font-medium uppercase tracking-[0.22em] text-muted">
+        <p className="text-[0.7rem] font-medium uppercase tracking-[0.22em] text-accent-dark">
           {kicker}
         </p>
         <h2 className="mt-3 font-display text-4xl leading-[1.02] tracking-[-0.025em] text-ink sm:text-5xl">

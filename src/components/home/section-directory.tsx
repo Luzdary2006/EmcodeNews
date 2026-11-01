@@ -9,30 +9,30 @@ export function SectionDirectory() {
       <Container>
         <div id="sections-heading">
           <SectionHeading
-            kicker="Inside the issue"
-            title="Three ways in"
-            description="Start where the semester is loudest. Every section has a short introduction, the tools that fit, and a practical way to use them."
+            kicker="Find your starting point"
+            title="Choose your focus"
+            description="Explore focused guides to studying, collaborating, and building useful habits."
           />
         </div>
 
-        <div className="mt-10 border-b border-line">
+        <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {sections.map((section) => (
             <Link
               key={section.id}
               href={section.href}
-              className="group grid grid-cols-[auto_1fr] items-start gap-5 border-t border-line py-8 transition-colors hover:bg-surface/70 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent sm:gap-8 sm:py-10"
+              className="group flex h-full flex-col rounded-xl border border-line bg-surface p-6 text-left transition-colors hover:border-accent/50 hover:bg-surface/80 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent sm:p-7"
             >
-              <span className="pt-2 font-display text-sm text-muted">
+              <span className="font-display text-sm text-accent">
                 {section.number}
               </span>
-              <div>
-                <p className="text-[0.62rem] font-medium uppercase tracking-[0.2em] text-muted">
+              <div className="mt-6 text-left">
+                <p className="text-[0.62rem] font-medium uppercase tracking-[0.2em] text-accent-dark">
                   {section.kicker}
                 </p>
-                <h3 className="mt-2 font-display text-3xl leading-[1.02] tracking-[-0.03em] text-ink sm:text-5xl">
+                <h3 className="mt-3 font-display text-3xl leading-[1.02] tracking-[-0.03em] text-ink">
                   {section.name}
                 </h3>
-                <p className="mt-3 max-w-xl text-sm leading-relaxed text-muted">
+                <p className="mt-4 text-left text-sm leading-relaxed text-muted">
                   {section.description}
                 </p>
               </div>

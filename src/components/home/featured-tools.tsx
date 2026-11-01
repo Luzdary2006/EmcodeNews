@@ -14,7 +14,7 @@ export function FeaturedTools() {
           <SectionHeading
             kicker="Editor’s picks"
             title="Start with these"
-            description="The right tools save time, sharpen your study habits, and make teamwork a lot less stressful."
+            description="A few editor-selected tools worth exploring first."
             action={
               <ButtonLink href="/tools" variant="outline">
                 See the full toolkit

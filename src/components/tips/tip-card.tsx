@@ -4,12 +4,12 @@ export function TipCard({ tip }: { tip: Tip }) {
   return (
     <article className="flex h-full flex-col rounded-xl border border-line bg-surface p-6">
       <div className="flex items-center justify-between gap-4">
-        <span className="text-[0.62rem] font-medium uppercase tracking-[0.2em] text-muted">
+        <span className="text-[0.62rem] font-medium uppercase tracking-[0.2em] text-accent-dark">
           {tip.topic}
         </span>
         <span
           aria-hidden="true"
-          className="font-display text-xl leading-none text-muted"
+          className="font-display text-xl leading-none text-accent"
         >
           {tip.number}
         </span>

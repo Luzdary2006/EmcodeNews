@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Container } from "@/components/ui/container";
 import { ButtonLink } from "@/components/ui/button-link";
 import { categories } from "@/data/categories";
@@ -9,8 +10,18 @@ import { tools } from "@/data/tools";
 
 export function Hero() {
   return (
-    <section className="border-b border-line">
-      <Container className="grid gap-12 py-14 md:py-20 lg:grid-cols-12 lg:gap-10 lg:py-24">
+    <section className="relative isolate overflow-hidden border-b border-line">
+      <Image
+        src="/logos/portada%20(2).png"
+        alt=""
+        fill
+        priority
+        sizes="100vw"
+        aria-hidden="true"
+        className="-z-20 object-cover opacity-45"
+      />
+      <div aria-hidden="true" className="absolute inset-0 -z-10 bg-paper/55" />
+      <Container className="relative grid gap-12 py-14 md:py-20 lg:grid-cols-12 lg:gap-10 lg:py-24">
         <div className="lg:col-span-7">
           <p className="text-[0.68rem] font-medium uppercase tracking-[0.22em] text-muted">
             A digital magazine for university students
@@ -62,10 +73,11 @@ export function Hero() {
               </dd>
             </div>
           </dl>
+
         </div>
 
         <div className="lg:col-span-5">
-          <aside className="h-full rounded-xl bg-ink p-7 text-paper sm:p-9">
+          <aside className="self-start rounded-xl bg-ink p-7 text-paper sm:p-9">
             <div className="flex items-center justify-between text-[0.62rem] uppercase tracking-[0.2em] text-paper/70">
               <span>{site.issue}</span>
               <span>{site.issueDate}</span>

@@ -7,8 +7,8 @@ export const sections: Section[] = [
     name: "Study & Learning",
     shortName: "Study",
     href: "/study-learning",
-    kicker: "Read, note, practise",
-    tagline: "Read, take notes, and practise with intention.",
+    kicker: "Read, note, practice",
+    tagline: "Read, take notes, and practice with intention.",
     description:
       "The tools in this section help you capture what you learn, connect ideas across courses, and test your understanding before an exam does it for you.",
   },

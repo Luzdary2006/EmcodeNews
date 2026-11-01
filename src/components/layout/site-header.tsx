@@ -94,7 +94,7 @@ export function SiteHeader() {
                     <span
                       aria-hidden="true"
                       className={cn(
-                        "absolute -bottom-0.5 left-0 h-px w-full bg-ink transition-opacity",
+                        "absolute -bottom-0.5 left-0 h-0.5 w-full bg-accent transition-opacity",
                         active ? "opacity-100" : "opacity-0",
                       )}
                     />

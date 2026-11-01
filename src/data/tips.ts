@@ -8,7 +8,7 @@ export const tips: Tip[] = [
     title: "Plan the week, not the day",
     summary:
       "A weekly review gives you a map. A daily list only gives you a direction.",
-    body: "Set aside twenty minutes at the start of the week. List every deadline, class, and commitment, then choose the three outcomes that would make the week a success. Daily lists are useful, but they tend to fill up with urgency instead of priority.",
+    body: "At the start of each week, list your deadlines and commitments. Then choose the three outcomes that matter most.",
   },
   {
     id: "one-home-per-course",
@@ -26,7 +26,7 @@ export const tips: Tip[] = [
     title: "Study in focused blocks",
     summary:
       "Fifty minutes of single-task work beats three hours of interrupted browsing.",
-    body: "Choose one task, close everything else, and set a timer for fifty minutes. Take a real break when it rings: stand up, drink water, look away from the screen. The point is not to study longer. It is to make the time you already spend count.",
+    body: "Choose one task, close distractions, and work for fifty minutes. When the timer rings, take a real break before your next block.",
   },
   {
     id: "notes-you-can-reuse",
@@ -35,7 +35,7 @@ export const tips: Tip[] = [
     title: "Write notes you can reuse",
     summary:
       "A transcript records a lecture. A summary prepares you for the exam.",
-    body: "After each lecture, write five lines in your own words: the main argument, one example, one question, and two connections to earlier material. That small act of compression is what makes notes useful weeks later, when the slides no longer make sense on their own.",
+    body: "After each lecture, write five lines in your own words: the main idea, one example, one question, and two links to earlier material.",
   },
   {
     id: "weekly-reset",
@@ -65,7 +65,7 @@ export const needs: NeedRecommendation[] = [
   },
   {
     need: "Learning to code",
-    why: "Practise with structured lessons, then keep your work in version control.",
+    why: "Practice with structured lessons, then keep your work in version control.",
     toolSlugs: ["freecodecamp", "codedex", "github"],
   },
   {
