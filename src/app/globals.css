@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-@theme {
+@theme inline {
   --color-paper: #f7f3ea;
   --color-surface: #fffdf7;
   --color-ink: #15161a;
@@ -43,10 +43,4 @@
   }
 }
 
-@utility text-balance {
-  text-wrap: balance;
-}
 
-@utility text-pretty {
-  text-wrap: pretty;
-}
