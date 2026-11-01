@@ -20,7 +20,7 @@ export default function OpengraphImage() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          backgroundColor: "#faf8f2",
+          backgroundColor: "#fafafa",
           padding: "64px 72px",
           color: "#15161a",
         }}
@@ -33,7 +33,7 @@ export default function OpengraphImage() {
             fontSize: 22,
             letterSpacing: 3,
             textTransform: "uppercase",
-            color: "#5c5b54",
+            color: "#59616b",
           }}
         >
           <div style={{ display: "flex", gap: 18 }}>
@@ -71,7 +71,7 @@ export default function OpengraphImage() {
             display: "flex",
             alignItems: "flex-end",
             justifyContent: "space-between",
-            borderTop: "2px solid #ded8c9",
+            borderTop: "2px solid #d9dee5",
             paddingTop: 28,
           }}
         >
@@ -84,7 +84,7 @@ export default function OpengraphImage() {
               display: "flex",
               gap: 18,
               fontSize: 24,
-              color: "#5c5b54",
+              color: "#59616b",
             }}
           >
             <span>12 tools</span>

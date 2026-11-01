@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-paper: #f7f3ea;
-  --color-surface: #fffdf7;
+  --color-paper: #fafafa;
+  --color-surface: #ffffff;
   --color-ink: #15161a;
   --color-ink-soft: #34353b;
-  --color-muted: #5c5b54;
-  --color-line: #ded8c9;
+  --color-muted: #59616b;
+  --color-line: #d9dee5;
   --color-accent: #7939cc;
   --color-accent-dark: #5c2aa2;
 
@@ -42,5 +42,3 @@
     outline-offset: 2px;
   }
 }
-
-
