@@ -14,6 +14,8 @@ import { getSection } from "@/data/sections";
 import { needs, stacks, tips } from "@/data/tips";
 import { getToolBySlug, getToolsBySection } from "@/data/tools";
 
+export const dynamic = "force-static";
+
 export const metadata: Metadata = {
   title: "Tips & Recommendations",
   description:

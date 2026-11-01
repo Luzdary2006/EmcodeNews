@@ -1,6 +1,8 @@
 import { ImageResponse } from "next/og";
 import { site } from "@/data/site";
 
+export const dynamic = "force-static";
+
 export const alt = `${site.name} — The digital toolkit for university life`;
 export const size = {
   width: 1200,

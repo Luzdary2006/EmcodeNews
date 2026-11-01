@@ -7,6 +7,8 @@ import { getCategory } from "@/data/categories";
 import { site } from "@/data/site";
 import { getToolBySlug, tools } from "@/data/tools";
 
+export const dynamic = "force-static";
+
 export function generateStaticParams() {
   return tools.map((tool) => ({ slug: tool.slug }));
 }

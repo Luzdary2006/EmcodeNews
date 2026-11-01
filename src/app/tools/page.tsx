@@ -6,6 +6,8 @@ import { categories } from "@/data/categories";
 import { site } from "@/data/site";
 import { tools } from "@/data/tools";
 
+export const dynamic = "force-static";
+
 export const metadata: Metadata = {
   title: "All tools",
   description:

@@ -3,6 +3,8 @@ import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
 import { sections } from "@/data/sections";
 
+export const dynamic = "force-static";
+
 export const metadata: Metadata = {
   title: "Page not found",
   robots: {

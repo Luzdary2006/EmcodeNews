@@ -7,6 +7,8 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import { getSection } from "@/data/sections";
 import { getToolsBySection } from "@/data/tools";
 
+export const dynamic = "force-static";
+
 export const metadata: Metadata = {
   title: "Communication & Collaboration",
   description:
