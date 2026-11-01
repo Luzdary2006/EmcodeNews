@@ -1,12 +1,14 @@
-import Image from "next/image";
 import {
   SiClickup,
   SiDiscord,
   SiFigma,
+  SiFreecodecamp,
+  SiGithub,
   SiGoogledrive,
   SiGooglemeet,
   SiJitsi,
   SiNotebooklm,
+  SiNotion,
   SiObsidian,
 } from "react-icons/si";
 import type { IconType } from "react-icons";
@@ -26,9 +28,12 @@ const brandIcons: Partial<Record<Tool["slug"], IconType>> = {
   discord: SiDiscord,
   clickup: SiClickup,
   figma: SiFigma,
+  freecodecamp: SiFreecodecamp,
+  github: SiGithub,
   "google-meet": SiGooglemeet,
   "jitsi-meet": SiJitsi,
   "google-drive": SiGoogledrive,
+  notion: SiNotion,
 };
 
 export function ToolLogo({ tool, size = 48, className }: ToolLogoProps) {
@@ -52,13 +57,14 @@ export function ToolLogo({ tool, size = 48, className }: ToolLogoProps) {
           color="#000000"
         />
       ) : (
-        <Image
+        <img
           src={withBase(tool.logo)}
           alt=""
           width={inner}
           height={inner}
-          unoptimized
-          className="h-auto w-auto"
+          loading="lazy"
+          decoding="async"
+          className="h-auto w-auto object-contain"
         />
       )}
     </span>
