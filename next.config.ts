@@ -1,17 +1,12 @@
 import type { NextConfig } from "next";
 
+const repo = "EmcodeNews";
+
 const nextConfig: NextConfig = {
-  /* config options here */
-  cacheComponents: true,
-  partialPrefetching: true,
-  turbopack: {
-    rules: {
-      "*.css": {
-        loaders: ["@tailwindcss/turbopack"],
-        as: "*.css",
-      },
-    },
-  },
+  output: "export",
+  basePath: `/${repo}`,
+  images: { unoptimized: true },
+  trailingSlash: true,
 };
 
 export default nextConfig;
