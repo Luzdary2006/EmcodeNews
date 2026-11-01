@@ -11,6 +11,7 @@ import {
   SiNotion,
   SiObsidian,
 } from "react-icons/si";
+import { FaComputer } from "react-icons/fa6";
 import type { IconType } from "react-icons";
 import { cn } from "@/lib/cn";
 import { withBase } from "@/lib/with-base";
@@ -27,6 +28,7 @@ const brandIcons: Partial<Record<Tool["slug"], IconType>> = {
   notebooklm: SiNotebooklm,
   discord: SiDiscord,
   clickup: SiClickup,
+  codedex: FaComputer,
   figma: SiFigma,
   freecodecamp: SiFreecodecamp,
   github: SiGithub,
