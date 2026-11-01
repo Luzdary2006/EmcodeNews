@@ -35,7 +35,7 @@ const taskRoutes = [
     toolSlugs: ["notebooklm"],
   },
   {
-    task: "Practise programming",
+    task: "Practice programming",
     toolSlugs: ["freecodecamp", "codedex"],
   },
 ];
@@ -57,7 +57,7 @@ export default function StudyLearningPage() {
             <SectionHeading
               kicker="The toolkit"
               title="Five tools for the work of learning"
-              description="Two note-taking systems, one research assistant, and two places to practise code. They overlap on purpose: the right choice depends on whether you are capturing, understanding, or practising."
+              description="Two note-taking systems, one research assistant, and two places to practice code. They overlap on purpose: the right choice depends on whether you are capturing, understanding, or practicing."
             />
           </div>
           <ToolGrid tools={sectionTools} className="mt-10" />

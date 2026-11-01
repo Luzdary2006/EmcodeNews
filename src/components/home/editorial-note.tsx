@@ -22,14 +22,14 @@ export function EditorialNote() {
       <Container className="py-14 md:py-16">
         <h2
           id="principles-heading"
-          className="text-[0.62rem] font-medium uppercase tracking-[0.22em] text-muted"
+          className="text-[0.62rem] font-medium uppercase tracking-[0.22em] text-accent-dark"
         >
           How this magazine works
         </h2>
         <div className="mt-8 grid gap-8 md:grid-cols-3 md:gap-10">
           {principles.map((principle, index) => (
-            <div key={principle.title} className="border-t border-ink/15 pt-5">
-              <p className="font-display text-lg text-muted">
+            <div key={principle.title} className="border-t border-accent/35 pt-5">
+              <p className="font-display text-lg text-accent">
                 0{index + 1}
               </p>
               <h3 className="mt-2 font-display text-2xl tracking-[-0.02em] text-ink">

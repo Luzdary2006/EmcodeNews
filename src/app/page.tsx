@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { EditorialNote } from "@/components/home/editorial-note";
 import { FeaturedTools } from "@/components/home/featured-tools";
 import { Hero } from "@/components/home/hero";
-import { LogoStrip } from "@/components/home/logo-strip";
 import { Manifesto } from "@/components/home/manifesto";
 import { SectionDirectory } from "@/components/home/section-directory";
 import { site } from "@/data/site";
@@ -37,9 +36,8 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
       />
       <Hero />
-      <LogoStrip />
-      <FeaturedTools />
       <EditorialNote />
+      <FeaturedTools />
       <SectionDirectory />
       <Manifesto />
     </>
