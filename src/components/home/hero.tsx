@@ -7,12 +7,13 @@ import { sections } from "@/data/sections";
 import { site } from "@/data/site";
 import { tips } from "@/data/tips";
 import { tools } from "@/data/tools";
+import { withBase } from "@/lib/with-base";
 
 export function Hero() {
   return (
     <section className="relative isolate overflow-hidden border-b border-line">
       <Image
-        src="/logos/portada%20(2).png"
+        src={withBase("/logos/portada%20(2).png")}
         alt=""
         fill
         priority
