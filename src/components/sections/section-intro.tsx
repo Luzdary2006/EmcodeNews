@@ -1,7 +1,24 @@
+import Image from "next/image";
 import { Breadcrumbs } from "@/components/ui/external-link";
 import { Container } from "@/components/ui/container";
 import { site } from "@/data/site";
+import { withBase } from "@/lib/with-base";
 import type { Section } from "@/types/content";
+
+const sectionArtwork = {
+  "study-learning": {
+    src: "/logos/imagen2.png",
+    alt: "Student taking notes while studying with a laptop and an open book.",
+  },
+  "communication-collaboration": {
+    src: "/logos/imagen1.png",
+    alt: "Student communicating and working on a laptop.",
+  },
+  "tips-recommendations": {
+    src: "/logos/imagen3.jpg",
+    alt: "Students using digital tools and study materials to learn.",
+  },
+} as const;
 
 interface SectionIntroProps {
   section: Section;
@@ -22,8 +39,8 @@ export function SectionIntro({ section, toolCount, meta }: SectionIntroProps) {
           ]}
         />
 
-        <div className="mt-8 grid gap-8 lg:grid-cols-12 lg:items-end">
-          <div className="lg:col-span-8">
+        <div className="mt-8 grid gap-8 lg:grid-cols-12 lg:items-center">
+          <div className="lg:col-span-7">
             <p className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[0.66rem] font-medium uppercase tracking-[0.22em] text-muted">
               <span>Section {section.number}</span>
               <span>{section.kicker}</span>
@@ -31,9 +48,7 @@ export function SectionIntro({ section, toolCount, meta }: SectionIntroProps) {
             <h1 className="mt-4 text-balance font-display text-[clamp(2.7rem,7vw,5.4rem)] font-light leading-[0.94] tracking-[-0.04em] text-ink">
               {section.tagline}
             </h1>
-          </div>
-          <div className="lg:col-span-4">
-            <p className="text-pretty text-base leading-relaxed text-ink-soft">
+            <p className="mt-6 max-w-2xl text-pretty text-base leading-relaxed text-ink-soft">
               {section.description}
             </p>
             <p className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-1 text-[0.62rem] uppercase tracking-[0.18em] text-muted">
@@ -42,6 +57,15 @@ export function SectionIntro({ section, toolCount, meta }: SectionIntroProps) {
               ))}
               <span>Updated {site.updated}</span>
             </p>
+          </div>
+          <div className="relative aspect-[16/10] overflow-hidden rounded-xl border border-line bg-surface lg:col-span-5">
+            <Image
+              src={withBase(sectionArtwork[section.id].src)}
+              alt={sectionArtwork[section.id].alt}
+              fill
+              sizes="(max-width: 1024px) 100vw, 42vw"
+              className="object-cover"
+            />
           </div>
         </div>
       </Container>
