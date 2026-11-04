@@ -108,12 +108,13 @@ jobs:
               *) return 1 ;;
             esac
           }
-          for sha in $(git log --format=%H -n 20); do
+          for sha in $(git log --format=%H -n 6); do
             [ "$sha" = "${GITHUB_SHA}" ] && continue
             code=$(curl -s -o /tmp/pages-deployment.json -w '%{http_code}' \
               -H "Authorization: Bearer ${GH_TOKEN}" \
               -H "Accept: application/vnd.github+json" \
               "${api}/pages/deployments/${sha}")
+            echo "::warning::Pages deployment ${sha}: GET ${code} $(head -c 250 /tmp/pages-deployment.json)"
             [ "$code" = "200" ] || continue
             state=$(jq -r '.status // empty' /tmp/pages-deployment.json)
             if is_active "$state"; then
@@ -131,9 +132,9 @@ jobs:
                   "${api}/pages/deployments/${sha}" | jq -r '.status // empty')
                 is_active "$state" || break
               done
-              echo "Pages deployment ${sha} is now: ${state:-unknown}"
+              echo "::warning::After cancel, Pages deployment ${sha} is: ${state:-unknown}"
             else
-              echo "Pages deployment ${sha}: ${state:-none}"
+              echo "::warning::Pages deployment ${sha} state: ${state:-none}"
             fi
           done
 
