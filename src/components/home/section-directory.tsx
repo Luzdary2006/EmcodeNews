@@ -7,7 +7,7 @@ import { withBase } from "@/lib/with-base";
 
 const sectionImages = {
   "study-learning": {
-    src: "/logos/imagen2.png",
+    src: "/logos/imagen1.png",
     alt: "Estudiante trabajando en una computadora con un libro abierto.",
   },
   "communication-collaboration": {
