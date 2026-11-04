@@ -94,49 +94,28 @@ jobs:
       # A Pages deployment can stay stuck in "in progress" (for example when a
       # previous run is cancelled or times out). While it is stuck, every new
       # deploy fails with: "Failed to create deployment (status: 400) ... due to
-      # in progress deployment". Cancel those stale deployments before deploying.
-      - name: Cancel stale Pages deployments
+      # in progress deployment". Cancel unfinished deployments before deploying.
+      - name: Cancel unfinished Pages deployments
         continue-on-error: true
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           set -u
           api="https://api.github.com/repos/${GITHUB_REPOSITORY}"
-          is_active() {
-            case "$1" in
-              deployment_in_progress|syncing_files|finished_file_sync|updating_pages|purging_cdn) return 0 ;;
-              *) return 1 ;;
-            esac
-          }
-          for sha in $(git log --format=%H -n 6); do
+          for sha in $(git log --format=%H -n 10); do
             [ "$sha" = "${GITHUB_SHA}" ] && continue
-            code=$(curl -s -o /tmp/pages-deployment.json -w '%{http_code}' \
+            state=$(curl -s \
               -H "Authorization: Bearer ${GH_TOKEN}" \
               -H "Accept: application/vnd.github+json" \
-              "${api}/pages/deployments/${sha}")
-            echo "::warning::Pages deployment ${sha}: GET ${code} $(head -c 250 /tmp/pages-deployment.json)"
-            [ "$code" = "200" ] || continue
-            state=$(jq -r '.status // empty' /tmp/pages-deployment.json)
-            if [ "$state" != "succeed" ]; then
-              echo "::warning::Cancelling Pages deployment ${sha} (${state:-unknown})"
-              ccode=$(curl -s -o /tmp/pages-cancel.json -w '%{http_code}' -X POST \
-                -H "Authorization: Bearer ${GH_TOKEN}" \
-                -H "Accept: application/vnd.github+json" \
-                "${api}/pages/deployments/${sha}/cancel" || true)
-              echo "::warning::Cancel ${sha} returned HTTP ${ccode} $(head -c 120 /tmp/pages-cancel.json)"
-              # Give Pages a moment to release the deployment lock.
-              for _ in $(seq 1 12); do
-                sleep 5
-                state=$(curl -s \
-                  -H "Authorization: Bearer ${GH_TOKEN}" \
-                  -H "Accept: application/vnd.github+json" \
-                  "${api}/pages/deployments/${sha}" | jq -r '.status // empty')
-                is_active "$state" || break
-              done
-              echo "::warning::After cancel, Pages deployment ${sha} is: ${state:-unknown}"
-            else
-              echo "::warning::Pages deployment ${sha} state: ${state:-none}"
-            fi
+              "${api}/pages/deployments/${sha}" | jq -r '.status // empty')
+            # Empty means there is no Pages deployment for that commit.
+            [ -z "$state" ] && continue
+            [ "$state" = "succeed" ] && continue
+            echo "Cancelling Pages deployment ${sha} (${state})"
+            curl -s -o /dev/null -X POST \
+              -H "Authorization: Bearer ${GH_TOKEN}" \
+              -H "Accept: application/vnd.github+json" \
+              "${api}/pages/deployments/${sha}/cancel" || true
           done
 
       - name: Deploy to GitHub Pages
