@@ -11,7 +11,7 @@ const sectionImages = {
     alt: "Estudiante trabajando en una computadora con un libro abierto.",
   },
   "communication-collaboration": {
-    src: "/logos/imagen1.jpg",
+    src: "/logos/imagen1.png",
     alt: "Estudiante en una videollamada desde su espacio de trabajo.",
   },
   "tips-recommendations": {
