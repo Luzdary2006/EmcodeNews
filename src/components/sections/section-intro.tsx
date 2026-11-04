@@ -28,6 +28,8 @@ interface SectionIntroProps {
 
 export function SectionIntro({ section, toolCount, meta }: SectionIntroProps) {
   const facts = meta ?? [`${toolCount} tools`];
+  const artwork = sectionArtwork[section.id];
+  const artworkSrc = withBase(artwork.src);
 
   return (
     <header className="border-b border-line">
@@ -58,13 +60,23 @@ export function SectionIntro({ section, toolCount, meta }: SectionIntroProps) {
               <span>Updated {site.updated}</span>
             </p>
           </div>
-          <div className="relative aspect-[16/10] overflow-hidden rounded-xl border border-line bg-surface lg:col-span-5">
+          {/* The artwork keeps its full frame: a blurred copy fills the panel
+              so the uncropped image never sits on empty bars. */}
+          <div className="relative aspect-square overflow-hidden rounded-xl border border-line bg-surface lg:col-span-5">
             <Image
-              src={withBase(sectionArtwork[section.id].src)}
-              alt={sectionArtwork[section.id].alt}
+              src={artworkSrc}
+              alt=""
+              aria-hidden
               fill
               sizes="(max-width: 1024px) 100vw, 42vw"
-              className="object-cover"
+              className="scale-110 object-cover opacity-40 blur-2xl"
+            />
+            <Image
+              src={artworkSrc}
+              alt={artwork.alt}
+              fill
+              sizes="(max-width: 1024px) 100vw, 42vw"
+              className="object-contain"
             />
           </div>
         </div>
