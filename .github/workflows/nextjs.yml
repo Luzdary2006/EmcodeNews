@@ -117,12 +117,13 @@ jobs:
             echo "::warning::Pages deployment ${sha}: GET ${code} $(head -c 250 /tmp/pages-deployment.json)"
             [ "$code" = "200" ] || continue
             state=$(jq -r '.status // empty' /tmp/pages-deployment.json)
-            if is_active "$state"; then
-              echo "::warning::Cancelling stale Pages deployment ${sha} (${state})"
-              curl -s -o /dev/null -X POST \
+            if [ "$state" != "succeed" ]; then
+              echo "::warning::Cancelling Pages deployment ${sha} (${state:-unknown})"
+              ccode=$(curl -s -o /tmp/pages-cancel.json -w '%{http_code}' -X POST \
                 -H "Authorization: Bearer ${GH_TOKEN}" \
                 -H "Accept: application/vnd.github+json" \
-                "${api}/pages/deployments/${sha}/cancel" || true
+                "${api}/pages/deployments/${sha}/cancel" || true)
+              echo "::warning::Cancel ${sha} returned HTTP ${ccode} $(head -c 120 /tmp/pages-cancel.json)"
               # Give Pages a moment to release the deployment lock.
               for _ in $(seq 1 12); do
                 sleep 5
