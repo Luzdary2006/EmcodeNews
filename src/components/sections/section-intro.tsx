@@ -7,16 +7,16 @@ import type { Section } from "@/types/content";
 
 const sectionArtwork = {
   "study-learning": {
-    src: "/logos/imagen2.png",
-    alt: "Student taking notes while studying with a laptop and an open book.",
+    src: "/logos/takeNotes.png",
+    alt: "Student taking notes while studying.",
   },
   "communication-collaboration": {
-    src: "/logos/imagen1.png",
-    alt: "Student communicating and working on a laptop.",
+    src: "/logos/communication.png",
+    alt: "Student communicating from a laptop.",
   },
   "tips-recommendations": {
-    src: "/logos/imagen3.jpg",
-    alt: "Students using digital tools and study materials to learn.",
+    src: "/logos/tips.png",
+    alt: "Tips and recommendations for students.",
   },
 } as const;
 

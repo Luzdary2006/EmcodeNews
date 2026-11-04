@@ -7,16 +7,16 @@ import { withBase } from "@/lib/with-base";
 
 const sectionImages = {
   "study-learning": {
-    src: "/logos/imagen2.png",
-    alt: "Estudiante trabajando en una computadora con un libro abierto.",
+    src: "/logos/takeNotes.png",
+    alt: "Estudiante tomando apuntes mientras estudia.",
   },
   "communication-collaboration": {
-    src: "/logos/imagen1.png",
-    alt: "Estudiante en una videollamada desde su espacio de trabajo.",
+    src: "/logos/communication.png",
+    alt: "Estudiante comunicándose desde su computadora.",
   },
   "tips-recommendations": {
-    src: "/logos/imagen3.jpg",
-    alt: "Ilustración de estudiantes usando recursos digitales para aprender.",
+    src: "/logos/tips.png",
+    alt: "Consejos y recomendaciones para estudiantes.",
   },
 } as const;
 
